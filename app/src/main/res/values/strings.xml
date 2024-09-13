@@ -17,4 +17,5 @@
 
     <!--Common Actions-->
     <string name="action_retry">Retry</string>
+    <string name="no_data_found">No Data Found</string>
 </resources>

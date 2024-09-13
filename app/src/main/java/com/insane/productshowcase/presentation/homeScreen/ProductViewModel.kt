@@ -28,6 +28,7 @@ class ProductViewModel @Inject constructor(
 
     internal fun getProductList() {
         viewModelScope.launch {
+            _productListFlow.value = UiState.Loading
             val response = fetchHomePageData()
             _productListFlow.update {
                 when (response) {

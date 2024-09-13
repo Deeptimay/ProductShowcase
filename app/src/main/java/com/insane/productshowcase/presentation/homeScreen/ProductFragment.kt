@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.insane.productshowcase.R
 import com.insane.productshowcase.data.models.Response
 import com.insane.productshowcase.databinding.FragmentProductBinding
 import com.insane.productshowcase.presentation.adapters.DynamicListAdapter
@@ -47,7 +48,7 @@ class ProductFragment : Fragment() {
             productViewModel.productListFlow.collect { uiState ->
                 when (uiState) {
                     is UiState.Loading -> displayLoadingState()
-                    is UiState.Error -> displayErrorState()
+                    is UiState.Error -> displayErrorState(uiState.throwable.toString())
                     is UiState.Success<*> -> {
                         displaySuccessState()
                         inflateData(uiState.content as? List<Response>)
@@ -69,14 +70,15 @@ class ProductFragment : Fragment() {
                 adapter = DynamicListAdapter(productData.toBaseUIList())
                 layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             }
-        } ?: run { displayErrorState() }
+        } ?: run { displayErrorState(getString(R.string.no_data_found)) }
     }
 
-    private fun displayErrorState() {
+    private fun displayErrorState(errorString: String) {
         binding.apply {
             productListLayout.clProductFragment.hide()
             loadingLayout.clDetailsLoading.hide()
             layoutError.clErrorMain.show()
+            layoutError.tvErrorSubTitle.text = errorString
         }
     }
 
