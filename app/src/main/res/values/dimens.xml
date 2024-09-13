@@ -1,3 +1,31 @@
 <resources>
+    <dimen name="md_margin_padding_size_micro">4dp</dimen>
+    <dimen name="md_margin_padding_size_small">8dp</dimen>
+    <dimen name="md_margin_padding_size_medium">16dp</dimen>
+    <dimen name="md_margin_padding_size_large">24dp</dimen>
+
+
+    <dimen name="dimen_divider_height">1dp</dimen>
+    <dimen name="dimen_avatar">48dp</dimen>
+    <dimen name="dimen_avatar_large">100dp</dimen>
+    <dimen name="dimen_error_image">200dp</dimen>
+    <dimen name="dimen_placeholder_username_leading_margin">16dp</dimen>
+    <dimen name="dimen_repo_desc_margin">8dp</dimen>
+    <dimen name="dimen_repo_lang_margin">8dp</dimen>
+    <dimen name="dimen_lang_circle">10dp</dimen>
+
+
+    <dimen name="md_text_size_mini">12sp</dimen>
+    <dimen name="md_text_size_small">14sp</dimen>
+    <dimen name="md_text_size_medium">16sp</dimen>
+    <dimen name="md_text_size_large">20sp</dimen>
+
+    <dimen name="md_standard_button_size">60dp</dimen>
+    <dimen name="margin_default">16dp</dimen>
+
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="_10dp">10dp</dimen>
+    <dimen name="_124dp">124dp</dimen>
+    <dimen name="_240dp">240dp</dimen>
+    <dimen name="_0dp">0</dimen>
 </resources>

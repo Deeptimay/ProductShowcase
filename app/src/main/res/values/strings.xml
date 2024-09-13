@@ -26,4 +26,14 @@
         rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus vestibulum. Fusce dictum libero quis
         erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="product_name">Product Name</string>
+
+    <!--Common Info-->
+    <string name="info_gamification_message">Don\'t worry, it\'s not you - it\'s us. Sorry about that.</string>
+
+    <!--Common Errors-->
+    <string name="error_something_went_wrong">Something went wrong..</string>
+
+    <!--Common Actions-->
+    <string name="action_retry">Retry</string>
 </resources>
