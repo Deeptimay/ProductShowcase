@@ -17,9 +17,7 @@ import com.insane.productshowcase.presentation.viewholders.HorizontalFreeScrollV
 import com.insane.productshowcase.presentation.viewholders.SplitBannerViewHolder
 
 
-class DynamicListAdapter : RecyclerView.Adapter<BaseViewHolder<BaseUI>>() {
-
-    private var uiList = emptyList<BaseUI>()
+class DynamicListAdapter(private var productData: List<BaseUI>) : RecyclerView.Adapter<BaseViewHolder<BaseUI>>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<BaseUI> {
         val inflater = LayoutInflater.from(parent.context)
@@ -44,23 +42,17 @@ class DynamicListAdapter : RecyclerView.Adapter<BaseViewHolder<BaseUI>>() {
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder<BaseUI>, position: Int) {
-        holder.bind(uiList[position])
+        holder.bind(productData[position])
     }
 
-    override fun getItemCount(): Int = uiList.size
+    override fun getItemCount(): Int = productData.size
 
     override fun getItemViewType(position: Int): Int {
-        return when (uiList[position]) {
+        return when (productData[position]) {
             is BannerUI -> ResponseType.BANNER.ordinal
             is HorizontalFreeScrollUI -> ResponseType.HORIZONTAL_FREE_SCROLL.ordinal
             is SplitBannerUI -> ResponseType.SPLIT_BANNER.ordinal
             else -> -1
         }
     }
-
-    fun setUIList(uiList: List<BaseUI>) {
-        this.uiList = uiList
-        notifyDataSetChanged()
-    }
-
 }

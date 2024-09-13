@@ -4,18 +4,22 @@ package com.insane.productshowcase.presentation.utils
 interface BaseUI
 
 data class BannerUI(
-    val image: String,
-    val title: String
+    val sectionType: String,
+    val items: List<ItemUI>
 ) : BaseUI
 
 data class HorizontalFreeScrollUI(
-    val image: String,
-    val title: String
+    val sectionType: String,
+    val items: List<ItemUI>
 ) : BaseUI
 
 data class SplitBannerUI(
-    val image: String,
-    val title: String
+    val sectionType: String,
+    val items: List<ItemUI>
 ) : BaseUI
 
+data class ItemUI(
+    val image: String,
+    val title: String
+)
 

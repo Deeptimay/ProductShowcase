@@ -7,10 +7,10 @@ import com.insane.productshowcase.presentation.utils.HorizontalFreeScrollUI
 
 
 class HorizontalFreeScrollViewHolder(private val binding: HorizontalFreeScrollLayoutBinding) :
-    BaseViewHolder<List<HorizontalFreeScrollUI>>(binding) {
-    override fun bind(item: List<HorizontalFreeScrollUI>): Unit = with(binding) {
+    BaseViewHolder<HorizontalFreeScrollUI>(binding) {
+    override fun bind(item: HorizontalFreeScrollUI): Unit = with(binding) {
         rvHorizontalScroll.apply {
-            adapter = HorizontalFreeScrollAdapter(item)
+            adapter = HorizontalFreeScrollAdapter(item.items)
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         }
     }

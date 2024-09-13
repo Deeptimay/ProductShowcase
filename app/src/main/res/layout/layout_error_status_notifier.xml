@@ -17,7 +17,7 @@
         android:contentDescription="@string/error_something_went_wrong"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_error_indicator"
-        app:layout_constraintBottom_toTopOf="@+id/lookUpButton"
+        app:layout_constraintBottom_toTopOf="@+id/retryButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -51,7 +51,7 @@
 
 
     <TextView
-        android:id="@+id/lookUpButton"
+        android:id="@+id/retryButton"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
         android:layout_height="@dimen/md_standard_button_size"

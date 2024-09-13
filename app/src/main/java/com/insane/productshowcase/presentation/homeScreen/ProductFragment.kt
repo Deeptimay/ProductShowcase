@@ -8,12 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.insane.productshowcase.data.models.ResponseItem
+import com.insane.productshowcase.data.models.Response
 import com.insane.productshowcase.databinding.FragmentProductBinding
 import com.insane.productshowcase.presentation.adapters.DynamicListAdapter
 import com.insane.productshowcase.presentation.utils.UiState
 import com.insane.productshowcase.presentation.utils.hide
 import com.insane.productshowcase.presentation.utils.show
+import com.insane.productshowcase.presentation.utils.toBaseUIList
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -49,18 +50,24 @@ class ProductFragment : Fragment() {
                     is UiState.Error -> displayErrorState()
                     is UiState.Success<*> -> {
                         displaySuccessState()
-                        inflateData(uiState.content as? List<ResponseItem>)
+                        inflateData(uiState.content as? List<Response>)
                     }
                 }
             }
         }
+
+        binding.apply {
+            layoutError.retryButton.setOnClickListener {
+                productViewModel.getProductList()
+            }
+        }
     }
 
-    private fun inflateData(productData: List<ResponseItem>?) {
+    private fun inflateData(productData: List<Response>?) {
         productData?.let {
             binding.productListLayout.rvProductsMainScreen.apply {
-                adapter = DynamicListAdapter()
-                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                adapter = DynamicListAdapter(productData.toBaseUIList())
+                layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             }
         } ?: run { displayErrorState() }
     }

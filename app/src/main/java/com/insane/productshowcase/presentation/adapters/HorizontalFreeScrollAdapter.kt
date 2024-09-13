@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.insane.productshowcase.databinding.HorizontalFreeScrollSingleRowBinding
-import com.insane.productshowcase.presentation.utils.HorizontalFreeScrollUI
+import com.insane.productshowcase.presentation.utils.ItemUI
 import com.insane.productshowcase.presentation.viewholders.HorizontalProductListViewHolder
 
-class HorizontalFreeScrollAdapter(private val horizontalProductList: List<HorizontalFreeScrollUI>) :
+class HorizontalFreeScrollAdapter(private val horizontalProductList: List<ItemUI>) :
     RecyclerView.Adapter<HorizontalProductListViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HorizontalProductListViewHolder {
         val inflater = LayoutInflater.from(parent.context)

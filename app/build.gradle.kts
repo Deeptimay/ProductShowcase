@@ -56,10 +56,6 @@ dependencies {
     // CardView
     implementation(libs.androidx.cardview)
 
-    // Coroutines
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.kotlinx.coroutines.android)
-
     // ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
@@ -68,20 +64,20 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.logging.interceptor)
 
-    // Gson library
-    implementation(libs.gson)
-    implementation(libs.converter.moshi)
+    // Moshi
     implementation(libs.moshi)
-    implementation(libs.moshi.adapters)
     implementation(libs.moshi.kotlin)
+    implementation(libs.moshi.adapters)
+
+    // Retrofit Moshi Converter
+    implementation(libs.converter.moshi)
+
+    // Optional: If you're using Kotlin, you might also want to add coroutines support
+    implementation(libs.kotlinx.coroutines.android)
 
     // Dagger Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
-
-    // ViewModel injection dependencies
-    implementation(libs.androidx.hilt.lifecycle.viewmodel)
-    kapt(libs.androidx.hilt.compiler)
 
     // Glide library
     implementation(libs.glide)

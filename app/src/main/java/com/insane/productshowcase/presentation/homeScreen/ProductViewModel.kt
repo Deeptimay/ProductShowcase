@@ -22,7 +22,11 @@ class ProductViewModel @Inject constructor(
     private val _productListFlow = MutableStateFlow<UiState>(UiState.Loading)
     val productListFlow: StateFlow<UiState> = _productListFlow.asStateFlow()
 
-    fun getProductList(repoId: String) {
+    init {
+        getProductList()
+    }
+
+    internal fun getProductList() {
         viewModelScope.launch {
             val response = fetchHomePageData()
             _productListFlow.update {

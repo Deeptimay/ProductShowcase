@@ -7,10 +7,6 @@ import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
 class MyApplication : MultiDexApplication() {
-    override fun onCreate() {
-        super.onCreate()
-        // Your initialization code here
-    }
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)

@@ -1,27 +1,28 @@
 package com.insane.productshowcase.presentation.viewholders
 
-import android.view.View
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 import com.insane.productshowcase.databinding.SplitBannerLayoutBinding
 import com.insane.productshowcase.presentation.utils.SplitBannerUI
 
 
 class SplitBannerViewHolder(private val binding: SplitBannerLayoutBinding) :
-    BaseViewHolder<List<SplitBannerUI>>(binding) {
-    override fun bind(item: List<SplitBannerUI>): Unit = with(binding) {
-        if (item.size > 1) {
+    BaseViewHolder<SplitBannerUI>(binding) {
+    override fun bind(item: SplitBannerUI): Unit = with(binding) {
+        if (item.items.size > 1) {
             Glide.with(context)
-                .load(item[0].image)
-                .circleCrop()
+                .load(item.items[0].image)
+                .apply(RequestOptions().transform(RoundedCorners(radius)))
                 .into(ivBanner1)
 
             Glide.with(context)
-                .load(item[1].image)
-                .circleCrop()
+                .load(item.items[1].image)
+                .apply(RequestOptions().transform(RoundedCorners(radius)))
                 .into(ivBanner2)
-        } else {
-            ivBanner1.visibility = View.GONE
-            ivBanner2.visibility = View.GONE
+
+            tvProductName1.text = item.items[0].title
+            tvProductName2.text = item.items[1].title
         }
     }
 }
