@@ -17,7 +17,7 @@ class OnlineInterceptor @Inject constructor(private val context: Context) : Inte
         val response = chain.proceed(chain.request())
         val cacheControl = response.header("Cache-Control")
         return response.newBuilder()
-            .header("Cache-Control", cacheControl ?: "public, max-age=172800") // Cache for 2 day
+            .header("Cache-Control", cacheControl ?: "public, max-age=60") // Cache for 1 minute
             .build()
     }
 

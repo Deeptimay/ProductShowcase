@@ -14,9 +14,9 @@ class OfflineInterceptor @Inject constructor(private val context: Context) : Int
 
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
-        val maxStale = 60 * 60 * 24 * 2 // 2 days
+        val maxStale = 60 * 60 * 24 * 1 // 1 days
 
-        // If offline, use cache up to a certain limit (e.g., 2 days)
+        // If offline, use cache up to a certain limit (e.g., 1 days)
         if (!isNetworkAvailable()) {
             val cacheControl = CacheControl.Builder()
                 .onlyIfCached()
