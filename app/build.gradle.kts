@@ -46,9 +46,9 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+//    testImplementation(libs.junit)
+//    androidTestImplementation(libs.androidx.junit)
+//    androidTestImplementation(libs.androidx.espresso.core)
 
     // RecyclerView
     implementation(libs.androidx.recyclerview)
@@ -85,4 +85,11 @@ dependencies {
 
     // Multidex
     implementation(libs.androidx.multidex)
+
+    // Testing
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
+    testImplementation("io.mockk:mockk:1.13.3")
+    testImplementation("app.cash.turbine:turbine:0.8.0")
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("androidx.arch.core:core-testing:2.1.0")
 }
