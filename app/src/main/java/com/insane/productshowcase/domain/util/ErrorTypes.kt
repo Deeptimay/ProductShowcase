@@ -11,4 +11,5 @@ sealed class ErrorTypes : Throwable() {
     data class TimeoutError(val exception: SocketTimeoutException) : ErrorTypes()
     data class ServerError(val code: Int, val internalMessage: String) : ErrorTypes()
     data class CustomError(val code: Int, val internalMessage: String) : ErrorTypes()
+    data class NoConnectivityException(val code: Int, val internalMessage: String) : ErrorTypes()
 }
