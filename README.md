@@ -1,7 +1,7 @@
 # ProductShowcase
 
 # Shortly
-A two page mobile app for feting product using the public APIs. With well handled loading, error states and retry capabilities.
+A two page mobile app for feting product using the public APIs. With well handled loading, Offline, error states and retry capabilities.
 
 # Features:
 * Kotlin<br>
@@ -27,6 +27,7 @@ This app requires minimum Android SDK 24 and Android Studio Koala
 * Retrofit is a Type-safe HTTP client for Android, Java and Kotlin by Square.<br>
 * Gson and Moshi is a serialization/deserialization library to convert objects into JSON and back.<br>
 * Okhttp interceptor Logs HTTP requests and responses.<br>
+* Okhttp OfflineInterceptor and OnlineInterceptor for cache the api responses.<br>
 * Material Design Build beautiful, usable products using Material Components for Android.<br>
 * RecyclerView is a flexible and efficient view used in Android to display large sets of data. Mock web server A scriptable web server for testing HTTP clients.<br>
 * JUnit and Mockito for testing.
