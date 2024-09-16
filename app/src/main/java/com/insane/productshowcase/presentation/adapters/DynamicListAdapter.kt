@@ -3,13 +3,13 @@ package com.insane.productshowcase.presentation.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.insane.productshowcase.data.models.ResponseType
 import com.insane.productshowcase.databinding.BannerLayoutBinding
 import com.insane.productshowcase.databinding.HorizontalFreeScrollLayoutBinding
 import com.insane.productshowcase.databinding.SplitBannerLayoutBinding
 import com.insane.productshowcase.presentation.utils.BannerUI
 import com.insane.productshowcase.presentation.utils.BaseUI
 import com.insane.productshowcase.presentation.utils.HorizontalFreeScrollUI
+import com.insane.productshowcase.presentation.utils.ResponseType
 import com.insane.productshowcase.presentation.utils.SplitBannerUI
 import com.insane.productshowcase.presentation.viewholders.BannerViewHolder
 import com.insane.productshowcase.presentation.viewholders.BaseViewHolder

@@ -7,6 +7,6 @@ import retrofit2.http.Headers
 
 interface ProductApi {
     @Headers("Accept: application/json")
-    @GET("b/5BEJ")
+    @GET("/b/B011")
     suspend fun getHomePageData(): Response<List<com.insane.productshowcase.data.models.Response>>
 }
